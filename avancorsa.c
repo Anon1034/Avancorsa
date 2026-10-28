@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 
-//Inclusione pigreco per calcolare l'angolo in radianti
-#ifndef Pi
-#define Pi 3.141
-#endif
 
 
 int main()
@@ -38,7 +34,7 @@ int main()
     //printf("Il tuo raggio e': %g mm\n", RaggioC);
 
     //calcolo Caster in radianti
-    CasterRad = Caster * (Pi / 180);
+    CasterRad = Caster * (3.141 / 180);
 
     //calcolo avancorsa
     Avancorsa = ((RaggioC * sin(CasterRad)) - OffSet) / cos(CasterRad);
@@ -47,7 +43,7 @@ int main()
     printf("La tua avancorsa e': %g mm\n", Avancorsa);
 
     printf("\n");
-    printf("Vuoi calcolare l'avncorsa con il tuo peso? [Y/N]\n");
+    printf("Vuoi calcolare l'avancorsa con il tuo peso? [Y/N]\n");
     printf("(ti serviranno delle misure fatte a mano)\n");
     scanf(" %c", &Risposta);
 
@@ -64,7 +60,7 @@ int main()
 
         AvancorsaPilota = Avancorsa + (((DiffPost - DiffAnt) / Interasse) * RaggioC);
 
-        printf("Inserisci la pressione del tuo pneumatico anteriore: ");
+        printf("Inserisci la pressione in bar del tuo pneumatico anteriore: ");
         scanf("%g", &Pressione);
 
         if (Pressione >= 2.25 && Pressione <= 2.5)
